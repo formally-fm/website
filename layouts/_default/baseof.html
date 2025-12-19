@@ -10,7 +10,14 @@
       <title>{{ .Title }} &bullet; {{ site.Title }} </title>
   </head>
 
-  <body class="relative h-screen font-[Montserrat] grid grid-cols-[25vw_75vw] grid-rows-[25vw_3rem_calc(70vw-3rem)] [&>div]:px-8">
+  <body class="
+    relative h-screen font-[Montserrat] 
+    grid grid-cols-[25vw_75vw] grid-rows-[20vw_3rem_calc(60vw-3rem)_10vw]
+    [&>div]:px-8
+    [&_a]:text-formally
+    [&_a]:font-medium
+    [&_a:hover]:underline
+  ">
     <div class="grid grid-flow-col justify-items-end content-end">
       <img class="max-w-[10rem] max-h-[10rem]" src="/images/logo.svg"/> 
     </div>
@@ -21,13 +28,18 @@
       </h1>
     </div>
     <div></div>
-    <div class="content-center">{{ time.Format "January 2, 2006" .Date }}</div>
+    <div class="content-center">
+      <span>{{ time.Format "January 2, 2006" .Date }}</span> &bullet;
+      <span>
+        <a href="{{ .Params.authorweb }}">{{ .Params.author }}</a>
+      </span>
+    </div>
     <div class="flex flex-col gap-8">
       <div>
         <h1 class="text-xl text-right">Formally</h1>
         <h2 class="text-right">The open-source<br/> formal methods toolchain</h2>
       </div>
-      <ul class="text-right [&_a:hover]:underline flex flex-col gap-2">
+      <ul class="text-right flex flex-col gap-2">
         <li>
           <a href="https://github.com/formally-fm/formally" target="_blank">
             View on GitHub
@@ -35,7 +47,23 @@
         </li>
       </ul>
     </div>
-    <div class="max-w-[60rem]">
+    <div class="
+      max-w-[60rem] 
+      [&_h1]:text-2xl [&_h1]:pt-4
+      [&_h2]:text-xl [&_h2]:pt-4
+      [&_p:not(:first-of-type)]:pt-1
+      [&_p:(:not(:first-child))]:pt-2
+      [&_ul]:pt-2
+      [&_ul>li]:pt-2
+      [&_ul]:list-disc
+      [&_ul]:list-inside
+      [&_ol]:pt-2
+      [&_ol>li]:pt-2
+      [&_ol]:list-decimal
+      [&_ol]:list-inside
+      [&_strong]:font-normal
+      [&_strong]:text-formally
+    ">
       {{ block "main" . }}
       {{ end }}
     </div>

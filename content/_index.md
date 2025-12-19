@@ -1,5 +1,5 @@
 ---
-title: Formally
+title: First version released... formally!
+date: 2025-12-19
 ---
 
-Nothing here yet...

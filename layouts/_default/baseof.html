@@ -7,31 +7,37 @@
         <link rel="stylesheet" href="{{ .RelPermalink }}"/>
       {{ end }}
 
-      {{ block "title" . }}
-        <title>{{ .Title }} &bullet; {{ site.Title }} </title>
-      {{ end }}
+      <title>{{ .Title }} &bullet; {{ site.Title }} </title>
   </head>
-  <body class="relative h-screen flex flex-row justify-center items-center font-[Montserrat]">
-    <div class="relative flex flex-row space-x-4">
-        <div class="bg-formally flex flex-row justify-center items-center aspect-square rounded-[1rem] shadow-xl">
-            <div class="text-[3rem] md:text-[7rem] text-white">
-                <span class="font-bold">::</span><span class="font-extrabold">fm</span>
-            </div>
-        </div>
-        <div class="flex flex-col space-y-4 justify-between text-[0.4rem] md:text-[0.9rem]">
-            <div>
-                <h1 class="text-[0.8rem] md:text-[2rem]">Formally</h1>
-                <p>The open-source formal methods toolchain.</p>
-            </div>
-            <div>
-                <p>The project is under initial prototyping and development.</p>
-                <p>First public source code expected in fall 2025.</p>
-            </div>
-            <div>
-                <p>For info and feedback write to <a class="underline text-formally" href="mailto:nicola.gigante@unibz.it">nicola.gigante@unibz.it</a>.</p>
-                <p>To get notified of updates click <a class="underline text-formally" target="_blank" href="https://forms.gle/kNW22XmDnMoy7g9k9">here</a>.</p>
-            </div>
-        </div>
+
+  <body class="relative h-screen font-[Montserrat] grid grid-cols-[25vw_75vw] grid-rows-[25vw_3rem_calc(70vw-3rem)] [&>div]:px-8">
+    <div class="grid grid-flow-col justify-items-end content-end">
+      <img class="max-w-[10rem] max-h-[10rem]" src="/images/logo.svg"/> 
+    </div>
+    <div class="grid grid-flow-col justify-items-start content-end">
+      <h1 class="text-4xl">
+        {{ block "title" . }}
+        {{ end }}
+      </h1>
+    </div>
+    <div></div>
+    <div class="content-center">{{ time.Format "January 2, 2006" .Date }}</div>
+    <div class="flex flex-col gap-8">
+      <div>
+        <h1 class="text-xl text-right">Formally</h1>
+        <h2 class="text-right">The open-source<br/> formal methods toolchain</h2>
+      </div>
+      <ul class="text-right [&_a:hover]:underline flex flex-col gap-2">
+        <li>
+          <a href="https://github.com/formally-fm/formally" target="_blank">
+            View on GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="max-w-[60rem]">
+      {{ block "main" . }}
+      {{ end }}
     </div>
   </body>
 </html>

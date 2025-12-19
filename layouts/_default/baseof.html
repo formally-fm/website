@@ -11,61 +11,66 @@
   </head>
 
   <body class="
-    relative h-screen font-[Montserrat] 
-    grid grid-cols-[25vw_75vw] grid-rows-[20vw_3rem_calc(60vw-3rem)_10vw]
+    relative h-full font-[Montserrat] 
+    flex flex-col
     [&>div]:px-8
     [&_a]:text-formally
     [&_a]:font-medium
     [&_a:hover]:underline
   ">
-    <div class="grid grid-flow-col justify-items-end content-end">
-      <img class="max-w-[10rem] max-h-[10rem]" src="/images/logo.svg"/> 
-    </div>
-    <div class="grid grid-flow-col justify-items-start content-end">
-      <h1 class="text-4xl">
-        {{ block "title" . }}
-        {{ end }}
-      </h1>
-    </div>
-    <div></div>
-    <div class="content-center">
-      <span>{{ time.Format "January 2, 2006" .Date }}</span> &bullet;
-      <span>
-        <a href="{{ .Params.authorweb }}">{{ .Params.author }}</a>
-      </span>
-    </div>
-    <div class="flex flex-col gap-8">
-      <div>
-        <h1 class="text-xl text-right">Formally</h1>
-        <h2 class="text-right">The open-source<br/> formal methods toolchain</h2>
+    <div class="flex flex-row items-end pt-8">
+      <div class="basis-1/4 flex flex-row justify-end">
+        <img class="w-[10rem] h-[10rem]" src="/images/logo.svg"/> 
       </div>
-      <ul class="text-right flex flex-col gap-2">
-        <li>
-          <a href="https://github.com/formally-fm/formally" target="_blank">
-            View on GitHub
-          </a>
-        </li>
-      </ul>
+      <div class="basis-3/4 pl-12">
+        <h1 class="text-4xl">
+          {{ block "title" . }}
+          {{ end }}
+        </h1>
+      </div>
     </div>
-    <div class="
-      max-w-[60rem] 
-      [&_h1]:text-2xl [&_h1]:pt-4
-      [&_h2]:text-xl [&_h2]:pt-4
-      [&_p:not(:first-of-type)]:pt-1
-      [&_p:(:not(:first-child))]:pt-2
-      [&_ul]:pt-2
-      [&_ul>li]:pt-2
-      [&_ul]:list-disc
-      [&_ul]:list-inside
-      [&_ol]:pt-2
-      [&_ol>li]:pt-2
-      [&_ol]:list-decimal
-      [&_ol]:list-inside
-      [&_strong]:font-normal
-      [&_strong]:text-formally
-    ">
-      {{ block "main" . }}
-      {{ end }}
+    <div class="flex flex-row justify-end pt-2">
+      <div class="basis-3/4 justify-start pl-12">
+        <span>{{ time.Format "January 2, 2006" .Date }}</span> &bullet;
+        <span>
+          <a href="{{ .Params.authorweb }}">{{ .Params.author }}</a>
+        </span>
+      </div>
+    </div>
+    <div class="flex flex-row items-start pt-4">
+      <div class="basis-1/4 flex flex-col gap-4">
+        <div>
+          <h1 class="text-xl text-right">Formally</h1>
+          <h2 class="text-right">The open-source<br/> formal methods toolchain</h2>
+        </div>
+        <ul class="text-right flex flex-col gap-2">
+          <li>
+            <a href="https://github.com/formally-fm/formally" target="_blank">
+              View on GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="
+        basis-3/4 pl-12 pb-16 max-w-[50rem]
+        [&_h1]:text-2xl [&_h1]:pt-4
+        [&_h2]:text-xl [&_h2]:pt-4
+        [&_p:not(:first-of-type)]:pt-1
+        [&_p:(:not(:first-child))]:pt-2
+        [&_ul]:pt-2
+        [&_ul>li]:pt-2
+        [&_ul]:list-disc
+        [&_ul]:list-inside
+        [&_ol]:pt-2
+        [&_ol>li]:pt-2
+        [&_ol]:list-decimal
+        [&_ol]:list-inside
+        [&_strong]:font-normal
+        [&_strong]:text-formally
+      ">
+        {{ block "main" . }}
+        {{ end }}
+      </div>
     </div>
   </body>
 </html>

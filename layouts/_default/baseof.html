@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode }}">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      {{ with resources.Get "css/styles.css" | css.TailwindCSS }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}"/>
+      {{ end }}
+
+      {{ block "title" . }}
+        <title>{{ .Title }} &bullet; {{ site.Title }} </title>
+      {{ end }}
+  </head>
+  <body class="relative h-screen flex flex-row justify-center items-center font-[Montserrat]">
+    <div class="relative flex flex-row space-x-4">
+        <div class="bg-formally flex flex-row justify-center items-center aspect-square rounded-[1rem] shadow-xl">
+            <div class="text-[3rem] md:text-[7rem] text-white">
+                <span class="font-bold">::</span><span class="font-extrabold">fm</span>
+            </div>
+        </div>
+        <div class="flex flex-col space-y-4 justify-between text-[0.4rem] md:text-[0.9rem]">
+            <div>
+                <h1 class="text-[0.8rem] md:text-[2rem]">Formally</h1>
+                <p>The open-source formal methods toolchain.</p>
+            </div>
+            <div>
+                <p>The project is under initial prototyping and development.</p>
+                <p>First public source code expected in fall 2025.</p>
+            </div>
+            <div>
+                <p>For info and feedback write to <a class="underline text-formally" href="mailto:nicola.gigante@unibz.it">nicola.gigante@unibz.it</a>.</p>
+                <p>To get notified of updates click <a class="underline text-formally" target="_blank" href="https://forms.gle/kNW22XmDnMoy7g9k9">here</a>.</p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

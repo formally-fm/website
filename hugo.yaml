@@ -1,0 +1,14 @@
+title: Formally - the extensible formal methods toolchain
+baseURL: https://formally.fm
+languageCode: en-us
+disableKinds:
+  - taxonomy
+  - term
+  - section
+  - sitemap
+  - rss
+
+build:
+  cachebusters:
+  - source: layouts/.*
+    target: css

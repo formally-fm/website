@@ -10,67 +10,94 @@
       <title>{{ .Title }} &bullet; {{ site.Title }} </title>
   </head>
 
-  <body class="
-    relative h-full font-[Montserrat] 
-    flex flex-col
-    [&>div]:px-8
-    [&_a]:text-formally
-    [&_a]:font-medium
-    [&_a:hover]:underline
-  ">
-    <div class="flex flex-row items-end pt-8">
-      <div class="basis-1/4 flex flex-row justify-end">
-        <img class="w-[10rem] h-[10rem]" src="/images/logo.svg"/> 
-      </div>
-      <div class="basis-3/4 pl-12">
-        <h1 class="text-4xl">
-          {{ block "title" . }}
-          {{ end }}
-        </h1>
-      </div>
-    </div>
-    <div class="flex flex-row justify-end pt-2">
-      <div class="basis-3/4 justify-start pl-12">
-        <span>{{ time.Format "January 2, 2006" .Date }}</span> &bullet;
-        <span>
-          <a href="{{ .Params.authorweb }}">{{ .Params.author }}</a>
-        </span>
-      </div>
-    </div>
-    <div class="flex flex-row items-start pt-4">
-      <div class="basis-1/4 flex flex-col gap-4">
-        <div>
-          <h1 class="text-xl text-right">Formally</h1>
-          <h2 class="text-right">The open-source<br/> formal methods toolchain</h2>
+  <body class="relative h-full font-[Montserrat] flex flex-col mt-8 gap-[6rem]">
+    <div class="
+      flex flex-col md:flex-row gap-[2rem] md:gap-[4rem]
+      [&_a]:text-formally
+      [&_a]:font-medium
+      [&_a:hover]:underline
+      [&_code]:text-sm
+    ">
+      <div class="flex flex-row md:flex-col pl-4 md:min-w-[20vw] flex-none gap-[3rem]">
+        <div class="md:h-[12rem] flex flex-none flex-row items-end justify-end">
+          <object class="w-[10rem] h-[10rem]" data="/images/logo.svg" type="image/svg+xml"></object>
         </div>
-        <ul class="text-right flex flex-col gap-2">
-          <li>
-            <a href="https://github.com/formally-fm/formally" target="_blank">
-              View on GitHub
-            </a>
-          </li>
-        </ul>
+        <div class="flex flex-col grow gap-8 justify-end md:justify-start">
+          <div>
+            <h1 class="text-xl text-left md:text-right">Formally</h1>
+            <h2 class="text-left md:text-right">The open-source<br/> formal methods toolchain</h2>
+          </div>
+          <ul class="text-left md:text-right flex flex-row md:flex-col gap-8 md:gap-2">
+            <li class="text-formally">
+              <a href="https://crates.io/crates/formally" target="_blank">
+                <span class="fa-brands fa-rust"></span>
+                <span class="hidden md:inline">Download</span>
+              </a>
+            </li>
+            <li class="text-formally">
+              <a href="https://docs.rs/formally/latest/formally/" target="_blank">
+                <span class="fa-solid fa-book"></span>
+                <span class="hidden md:inline">Documentation</span>
+              </a>
+            </li>
+            <li class="text-formally">
+              <a href="https://github.com/formally-fm/formally" target="_blank">
+                <span class="fa-brands fa-github"></span>
+                <span class="hidden md:inline">View on GitHub</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="
-        basis-3/4 pl-12 pb-16 max-w-[50rem]
-        [&_h1]:text-2xl [&_h1]:pt-4
-        [&_h2]:text-xl [&_h2]:pt-4
-        [&_p:not(:first-of-type)]:pt-1
-        [&_p:(:not(:first-child))]:pt-2
-        [&_ul]:pt-2
-        [&_ul>li]:pt-2
-        [&_ul]:list-disc
-        [&_ul]:list-inside
-        [&_ol]:pt-2
-        [&_ol>li]:pt-2
-        [&_ol]:list-decimal
-        [&_ol]:list-inside
-        [&_strong]:font-normal
-        [&_strong]:text-formally
-      ">
-        {{ block "main" . }}
-        {{ end }}
+      <div class="flex flex-col px-4 grow">
+        <div class="md:h-[12rem] flex flex-none flex-row items-end justify-start">
+          <h1 class="text-4xl">
+            {{ block "title" . }}
+            {{ end }}
+          </h1>
+        </div>
+        <div class="h-[3rem] flex flex-none flex-col">
+          <div class="flex flex-row gap-2 pt-[0.5rem]">
+            <span>{{ time.Format "January 2, 2006" .Date }}</span> &bullet;
+            <span>
+              <a href="{{ .Params.authorweb }}">{{ .Params.author }}</a>
+            </span>
+          </div>
+        </div>
+        <div class="
+          max-w-[50rem]
+          [&_h1]:text-2xl [&_h1]:pt-4
+          [&_h2]:text-xl [&_h2]:pt-4
+          [&_p:not(:first-child)]:pt-4
+          [&_pre]:pt-4
+          [&_ul]:pt-2
+          [&_ul]:pl-5
+          [&_ul_ul]:pt-0
+          [&_ul>li]:pt-2
+          [&_ul]:list-disc
+          [&_ol]:pt-2
+          [&_ol>li]:pt-2
+          [&_ol]:list-decimal
+          [&_ol]:pl-5
+          [&_ol_ol]:pt-0
+          [&_ol_ol]:list-[lower-alpha]
+          [&_strong]:font-normal
+          [&_strong]:text-formally
+        ">
+          {{ block "main" . }}
+          {{ end }}
+        </div>
       </div>
+    </div>
+    <div class="h-[5rem] bg-formally flex flex-none flex-col justify-center">
+      <span class="text-center text-white">
+        Copyright &copy; 2025 
+        <a href="https://www.inf.unibz.it/~gigante/" target="_blank"
+           class="hover:underline"
+        >
+          Nicola Gigante
+        </a>
+      </span>
     </div>
   </body>
 </html>

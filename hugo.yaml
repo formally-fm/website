@@ -1,4 +1,4 @@
-title: Formally - the extensible formal methods toolchain
+title: ::formally - the open-source formal methods toolchain
 baseURL: https://formally.fm
 languageCode: en-us
 disableKinds:
@@ -12,3 +12,8 @@ build:
   cachebusters:
   - source: layouts/.*
     target: css
+
+markup:
+  tableOfContents:
+    endLevel: 8
+    startLevel: 1

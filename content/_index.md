@@ -14,9 +14,9 @@ a first preview release in **autumn**. Well, here we are, with the first
 early-stage public release of the project, and **technically** still in autumn!
 
 But what is this project about, what is included in today's release, and where
-is the project going in the future? I will try to answer here, in order to final
-write down my plans but also to start a discussion about the needs this project
-is supposed to satisfy.
+is the project going in the future? I will try to answer here, in order to
+finally write down my plans but also to start a discussion about the needs this
+project is supposed to satisfy.
 
 Discussions are supposed to happen on the [GitHub Discussions] page, so after
 reading (or even before), if you feel like, drop a message!
@@ -83,15 +83,16 @@ Of all this utopy, today I've released just a small initial chunk.
 ## Ok, but what *actually* is ::formally?
 
 `::formally` is currently a [Rust library] providing the following components (*crates* in Rust's gergo):
-1. `formally::support` provides common facilities useful for the rest of the
+1. [`formally::support`] provides common facilities useful for the rest of the
    project. Crucially, it provides a mechanism of error reporting based on the
    concept of **diagnostic**, similar to what seen in many modern compilers, that helps producing precise and informative error messages throughout the
    project.
-2. `formally::io` provides utilities to parse input and produce output. The main
-   part of the module is a **parser combinators** library that allows easy and
-   quick writing of parsers that automatically produce precise and high-quality
-   error messages, integrated with the project's error reporting infrastructure.
-3. `formally::smt` provides an abstraction over Satisfiability Modulo Theories
+2. [`formally::io`] provides utilities to parse input and produce output. The
+   main part of the module is a **parser combinators** library that allows easy
+   and quick writing of parsers that automatically produce precise and
+   high-quality error messages, integrated with the project's error reporting
+   infrastructure.
+3. [`formally::smt`] provides an abstraction over Satisfiability Modulo Theories
    solvers and (what will hopefully become) a fully conformant implementation of
    the SMT-LIBv2 language.
 4. A simple toy command-line frontend to test the `formally::smt` module.
@@ -306,6 +307,9 @@ let's see if we can start collaborating... **formally!**
 [Luca Geatti]: https://users.dimi.uniud.it/~luca.geatti/
 [SPIN]: https://spin-web.github.io/SPIN2025/
 [Rust library]: https://crates.io/crates/formally
+[`formally::support`]: https://docs.rs/formally/latest/formally/support/
+[`formally::io`]: https://docs.rs/formally/latest/formally/io/
+[`formally::smt`]: https://docs.rs/formally/latest/formally/smt/
 [Z3]: https://github.com/Z3Prover/z3
 [README]: https://crates.io/crates/formally
 [PySMT]: https://github.com/pysmt/pysmt

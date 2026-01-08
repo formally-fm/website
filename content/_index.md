@@ -215,7 +215,7 @@ C++ code can minimize the risk of serious bugs. However, such high-quality
 standards need experience and the investment of an amount of effort that is
 simply not sustainable for a little project in the academic world. 
 
-Rust, on the other hand, if famous for ensuring its memory-safety guarantees,
+Rust, on the other hand, is famous for ensuring its memory-safety guarantees,
 which directly avoid a whole class of bugs that usually C++ developers have to
 fight with. However, what I found really life-changing has suprisingly little to
 do with the language's type system. What really made a difference is the

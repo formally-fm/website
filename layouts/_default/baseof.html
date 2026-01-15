@@ -10,9 +10,9 @@
       <title>{{ .Title }} &bullet; {{ site.Title }} </title>
   </head>
 
-  <body class="relative h-full font-[Montserrat] flex flex-col mt-8 gap-[6rem]">
+  <body class="relative h-[100vh] font-[Montserrat] flex flex-col gap-[6rem]">
     <div class="
-      flex flex-col md:flex-row gap-[2rem] md:gap-[4rem]
+      flex flex-col md:flex-row gap-[2rem] md:gap-[4rem] grow-2
       [&_a]:text-formally
       [&_a]:font-medium
       [&_a:hover]:underline
@@ -51,41 +51,37 @@
       </div>
       <div class="flex flex-col px-4 grow">
         <div class="md:h-[12rem] flex flex-none flex-row items-end justify-start">
-          <h1 class="text-4xl">
-            {{ block "title" . }}
-            {{ end }}
-          </h1>
+            <h1 class="text-4xl">
+              {{ block "title" . }}
+              {{ end }}
+            </h1>
         </div>
         <div class="h-[3rem] flex flex-none flex-col">
-          <div class="flex flex-row gap-2 pt-[0.5rem]">
-            <span>{{ time.Format "January 2, 2006" .Date }}</span> &bullet;
-            <span>
-              <a href="{{ .Params.authorweb }}">{{ .Params.author }}</a>
-            </span>
-          </div>
+            {{ block "date" . }}
+            {{ end }}
         </div>
         <div class="
-          max-w-[50rem]
-          [&_h1]:text-2xl [&_h1]:pt-4
-          [&_h2]:text-xl [&_h2]:pt-4
-          [&_p:not(:first-child)]:pt-4
-          [&_pre]:pt-4
-          [&_ul]:pt-2
-          [&_ul]:pl-5
-          [&_ul_ul]:pt-0
-          [&_ul>li]:pt-2
-          [&_ul]:list-disc
-          [&_ol]:pt-2
-          [&_ol>li]:pt-2
-          [&_ol]:list-decimal
-          [&_ol]:pl-5
-          [&_ol_ol]:pt-0
-          [&_ol_ol]:list-[lower-alpha]
-          [&_strong]:font-normal
-          [&_strong]:text-formally
+            max-w-[50rem]
+            [&_h1]:text-2xl [&_h1:not(:first-child)]:pt-4
+            [&_h2]:text-xl [&_h2:not(:first-child)]:pt-4
+            [&_p:not(:first-child)]:pt-4
+            [&_pre]:pt-4
+            [&_ul]:pt-2
+            [&_ul]:pl-5
+            [&_ul_ul]:pt-0
+            [&_ul>li]:pt-2
+            [&_ul]:list-disc
+            [&_ol]:pt-2
+            [&_ol>li]:pt-2
+            [&_ol]:list-decimal
+            [&_ol]:pl-5
+            [&_ol_ol]:pt-0
+            [&_ol_ol]:list-[lower-alpha]
+            [&_strong]:font-normal
+            [&_strong]:text-formally
         ">
-          {{ block "main" . }}
-          {{ end }}
+            {{ block "content" . }}
+            {{ end }}
         </div>
       </div>
     </div>

@@ -9,6 +9,8 @@ It is with extreme pleasure that I write this first post to announce the **first
 preview release** of `::formally`, a project I devoted a lot of effort to in the
 last **six months**.
 
+<!--more-->
+
 Last May, at the [SPIN] symposium, I presented the project's ideas and promised
 a first preview release in **autumn**. Well, here we are, with the first
 early-stage public release of the project, and **technically** still in autumn!

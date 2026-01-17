@@ -4,10 +4,7 @@
 
 {{ define "date" }}
     <div class="flex flex-row gap-2 pt-[0.5rem]">
-        <span>{{ time.Format "January 2, 2006" .Date }}</span> &bullet;
-        <span>
-            <a href="{{ .Params.authorweb }}">{{ .Params.author }}</a>
-        </span>
+        <span>{{ time.Format "January 2, 2006" .Date }}</span>
     </div>
 {{ end }}
 

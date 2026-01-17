@@ -19,7 +19,7 @@
       [&_code]:text-sm
     ">
       <div class="flex flex-row md:flex-col pl-4 md:min-w-[20vw] flex-none gap-[3rem]">
-        <div class="md:h-[12rem] flex flex-none flex-row items-end justify-end">
+        <div class="h-[12rem] flex flex-none flex-row items-end justify-end">
           <object class="w-[10rem] h-[10rem]" data="/images/logo.svg" type="image/svg+xml"></object>
         </div>
         <div class="flex flex-col grow gap-8 justify-end md:justify-start">
@@ -27,26 +27,48 @@
             <h1 class="text-xl text-left md:text-right">::formally</h1>
             <h2 class="text-left md:text-right">The open-source<br/> formal methods toolchain</h2>
           </div>
-          <ul class="text-left md:text-right flex flex-row md:flex-col gap-8 md:gap-2">
-            <li class="text-formally">
-              <a href="https://crates.io/crates/formally" target="_blank">
-                <span class="fa-brands fa-rust"></span>
-                <span class="hidden md:inline">Download</span>
-              </a>
-            </li>
-            <li class="text-formally">
-              <a href="https://docs.rs/formally/latest/formally/" target="_blank">
-                <span class="fa-solid fa-book"></span>
-                <span class="hidden md:inline">Documentation</span>
-              </a>
-            </li>
-            <li class="text-formally">
-              <a href="https://github.com/formally-fm/formally" target="_blank">
-                <span class="fa-brands fa-github"></span>
-                <span class="hidden md:inline">View on GitHub</span>
-              </a>
-            </li>
-          </ul>
+          <div class="flex flex-row md:flex-col gap-8">
+            <ul class="text-left md:text-right flex flex-row md:flex-col gap-8 md:gap-2">
+              <li class="text-formally">
+                <a href="/">
+                  <span class="fa-solid fa-house"></span>
+                  <span class="hidden md:inline">Home</span>
+                </a>
+              </li>
+              <li class="text-formally">
+                <a href="/blog">
+                  <span class="fa-solid fa-newspaper"></span>
+                  <span class="hidden md:inline">Blog</span>
+                </a>
+              </li>
+              <li class="text-formally">
+                <a href="https://www.inf.unibz.it/~gigante/"  target="_blank">
+                  <span class="fa-solid fa-user"></span>
+                  <span class="hidden md:inline">About me</span>
+                </a>
+              </li>
+            </ul>
+            <ul class="text-left md:text-right flex flex-row md:flex-col gap-8 md:gap-2">
+              <li class="text-formally">
+                <a href="https://crates.io/crates/formally" target="_blank">
+                  <span class="fa-brands fa-rust"></span>
+                  <span class="hidden md:inline">Download</span>
+                </a>
+              </li>
+              <li class="text-formally">
+                <a href="https://docs.rs/formally/latest/formally/" target="_blank">
+                  <span class="fa-solid fa-book"></span>
+                  <span class="hidden md:inline">Documentation</span>
+                </a>
+              </li>
+              <li class="text-formally">
+                <a href="https://github.com/formally-fm/formally" target="_blank">
+                  <span class="fa-brands fa-github"></span>
+                  <span class="hidden md:inline">View on GitHub</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="flex flex-col px-4 grow">
@@ -64,7 +86,7 @@
             max-w-[50rem]
             [&_h1]:text-2xl [&_h1:not(:first-child)]:pt-4
             [&_h2]:text-xl [&_h2:not(:first-child)]:pt-4
-            [&_p:not(:first-child)]:pt-4
+            [&_p:not(:first-of-type)]:pt-4
             [&_pre]:pt-4
             [&_ul]:pt-2
             [&_ul]:pl-5

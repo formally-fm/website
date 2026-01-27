@@ -4,7 +4,6 @@ languageCode: en-us
 disableKinds:
   - taxonomy
   - term
-  - section
   - sitemap
   - rss
 

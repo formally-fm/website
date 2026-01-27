@@ -1,0 +1,11 @@
+<ul class="list-none !pl-0">
+    {{ range first 5 (where .Site.RegularPages "Section" "blog") }}
+        <li class="flex flex-col">
+            <a class="text-xl" href="{{ .Permalink }}">{{ .Title }}</a>
+            <span class="date">{{ .Date.Format "January 2, 2006" }}</span>
+        </li>
+    {{ end }}
+    {{/*  <div class="pt-4">
+        <a href="/blog">Older posts...</a>
+    </div>  */}}
+</ul>

@@ -8,9 +8,9 @@
 {{ define "content" }}
     {{ range (where site.RegularPages "Section" "blog").ByDate.Reverse }}
         <section class="flex flex-col gap-2 [&:not(:first-of-type)]:pt-8">
-            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+            <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
             <span>{{ time.Format "January 2, 2006" .Date }}</span>
-            {{ .Summary }}<a href="{{ .Permalink }}">Read more&hellip;</a>
+            {{ .Summary }}<a href="{{ .RelPermalink }}">Read more&hellip;</a>
         </section>
     {{ end }}
 {{ end }}

@@ -6,6 +6,12 @@ Welcome to the website of `::formally`, an early-stage project providing a set
 of composable components useful to develop **formal methods** tools and
 applications.
 
+# News from the blog
+
+{{< blogposts >}}
+
+[SMT-LIB]: https://smtlib.cs.uiowa.edu
+
 # What is `::formally`
 
 `::formally` is a set of reusable and composable components that help with the
@@ -31,9 +37,3 @@ least C++ and Python).
 The project is in a **very early** stage of development.
 
 For more information on the project's vision, please read the [announcement blog post](/blog/first-version-released-formally/).
-
-# News from the blog
-
-{{< blogposts >}}
-
-[SMT-LIB]: https://smtlib.cs.uiowa.edu

@@ -107,7 +107,8 @@ In particular, it will be possible to:
    with `#[repr(C)]`;
 2. pass objects of Rust types by value in C++, with copies handled by `Clone` 
    implementations and `std::move()` doing almost what a Rust move does;
-3. use Rust generic types with C++ type parameters (e.g. `Vec<std::string>`);
+3. ~~use Rust generic types with C++ type parameters (e.g. `Vec<std::string>`);~~  
+(The above is more difficult than anticipated, I have to think more about it)
 4. use Rust traits as C++20 concepts;
 5. use `dyn`-compatible Rust traits as pure virtual base classes, with derived 
    classes passed as `dyn Trait` or `impl Trait` parameters to Rust functions;
@@ -127,15 +128,13 @@ the Rust standard library to C++:
 using namespace rust;
 
 int main() {
-   Vec<std::string> messages; // Rust Vec, C++ elements
+   String messages; // Rust String
 
-   messages.push("hello world!"); // Rust method, C++ argument
-   messages.push("bye bye!");
+   // Checked conversion of C strings to Rust `&str`
+   messages.push_str("hello world!"); 
+   messages.push_str("bye bye!");
 
-   // `IntoIterator` type turned into a C++ range
-   for(auto msg: messages) {
-      std::cout << msg << "\n";
-   }
+   std::cout << msg << "\n"; // `Display` used for `operator<<`
 
    return 0;
 }

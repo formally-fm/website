@@ -35,8 +35,7 @@ to be usable and extensible from other programming languages.
    For example, the [`formally::smt`] module currently includes a backend for
    `Z3` written using a thin wrapper over its C API, but the approach is not
    scalable to other solvers, many of which only have a C++ API which is quite
-   more difficult to wrap around. I would like to include a backend for `cvc5`,
-   for the example, but the latter is only accessible via C++.
+   more difficult to wrap around.
 
 2. then, for fast prototyping and lower entry barrier, being able to use and
    extend `formally` from Python is the next important goal. I'm not really a
@@ -131,10 +130,10 @@ int main() {
    String messages; // Rust String
 
    // Checked conversion of C strings to Rust `&str`
-   messages.push_str("hello world!"); 
-   messages.push_str("bye bye!");
+   messages.push_str("hello world!\n"); 
+   messages.push_str("bye bye!\n");
 
-   std::cout << msg << "\n"; // `Display` used for `operator<<`
+   std::cout << msg; // `Display` used for `operator<<`
 
    return 0;
 }
